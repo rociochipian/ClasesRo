@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.clases.databinding.MainActivityBinding
 import ar.edu.utn.frba.mobile.clases.ui.main.MainFragment
 import ar.edu.utn.frba.mobile.clases.ui.main.StatusUpdateFragment
+import ar.edu.utn.frba.mobile.clases.ui.main.TweetsService
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), MainFragment.OnFragmentInteractionListener, StatusUpdateFragment.OnFragmentInteractionListener {
     lateinit var binding: MainActivityBinding
