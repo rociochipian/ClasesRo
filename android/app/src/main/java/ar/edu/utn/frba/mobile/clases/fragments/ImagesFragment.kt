@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import ar.edu.utn.frba.mobile.clases.R
 import ar.edu.utn.frba.mobile.clases.adapters.ImagesAdapter
 import ar.edu.utn.frba.mobile.clases.databinding.FragmentImagesBinding
+import ar.edu.utn.frba.mobile.clases.utils.storage.fileSystem.ExternalStorage
 import ar.edu.utn.frba.mobile.clases.utils.storage.fileSystem.InternalStorage
 import ar.edu.utn.frba.mobile.clases.utils.storage.preferences.MyPreferences
 
@@ -83,7 +84,7 @@ class ImagesFragment : Fragment() {
     }
 
     private fun getEditedPictures(): List<Uri> {
-        val files = InternalStorage.getFiles(context!!)
+        val files = ExternalStorage.getFiles(requireContext())
         return files?.map { file -> file.toUri() } ?: listOf()
     }
 

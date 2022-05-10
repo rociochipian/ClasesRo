@@ -13,6 +13,7 @@ import ar.edu.utn.frba.mobile.clases.R
 import ar.edu.utn.frba.mobile.clases.adapters.ViewPagerAdapter
 import ar.edu.utn.frba.mobile.clases.databinding.FragmentEditImageBinding
 import ar.edu.utn.frba.mobile.clases.utils.storage.fileSystem.ExternalContent
+import ar.edu.utn.frba.mobile.clases.utils.storage.fileSystem.ExternalStorage
 import ar.edu.utn.frba.mobile.clases.utils.storage.fileSystem.InternalStorage
 import com.zomato.photofilters.imageprocessors.Filter
 import com.zomato.photofilters.imageprocessors.subfilters.BrightnessSubFilter
@@ -171,7 +172,7 @@ class EditImageFragment : Fragment(), FiltersListFragment.FiltersListFragmentLis
     }
 
     private fun save() {
-        InternalStorage.saveFile(requireContext(), filteredImage, Calendar.getInstance().time.toString())
+        ExternalStorage.saveFile(requireContext(), filteredImage, Calendar.getInstance().time.toString())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
